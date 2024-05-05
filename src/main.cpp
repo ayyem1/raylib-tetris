@@ -2,25 +2,24 @@
 
 #include "grid.h"
 
-int main()
-{
-    const int screenWidth = 360;
-    const int screenHeight = 640;
+int main() {
+  const int screenWidth = 360;
+  const int screenHeight = 640;
 
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
-    SetTargetFPS(60);
+  InitWindow(screenWidth, screenHeight, "Tetris");
+  SetTargetFPS(60);
 
-    Grid grid = Grid();
-    grid.Print();
+  Grid grid = Grid();
+  grid.Print();
 
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
-        ClearBackground(BLACK);
-        DrawFPS(10, 10);
-        EndDrawing();
-    }
+  while (!WindowShouldClose()) {
+    BeginDrawing();
+    ClearBackground(BLACK);
+    DrawFPS(10, 10);
+    grid.Draw();
+    EndDrawing();
+  }
 
-    CloseWindow();
-    return 0;
+  CloseWindow();
+  return 0;
 }
