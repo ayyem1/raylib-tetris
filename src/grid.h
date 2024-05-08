@@ -18,7 +18,6 @@ class Grid {
   int numRows;
   int cellSize;
   Vector2 startOffset;
-  std::vector<Color> colors;
 };
 
 #endif /* GRID_H */

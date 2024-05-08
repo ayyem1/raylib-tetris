@@ -1,6 +1,9 @@
+
 #include "grid.h"
 
 #include <iostream>
+
+#include "colors.h"
 
 Grid::Grid(int numRows, int numCols, int cellSize) {
   this->numRows = numRows;
@@ -17,8 +20,6 @@ void Grid::Initialize() {
       grid[row][column] = 0;
     }
   }
-
-  colors = {DARKGRAY, GREEN, RED, ORANGE, YELLOW, PURPLE, SKYBLUE, BLUE};
 }
 
 void Grid::Print() {
@@ -37,7 +38,7 @@ void Grid::Draw() {
       DrawRectangle(this->startOffset.x + (column * this->cellSize + 1),
                     this->startOffset.y + (row * this->cellSize + 1),
                     this->cellSize - 1, this->cellSize - 1,
-                    this->colors[cellValue]);
+                    ALL_COLORS[cellValue]);
     }
   }
 }
